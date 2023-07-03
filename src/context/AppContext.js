@@ -71,6 +71,32 @@ export const AppReducer = (state, action) => {
                 ...state
             }
 
+        case 'Increment_Budget':
+            action.type = "DONE";
+            state.budget = Math.min(state.budget + 10, 20000); 
+
+            return {
+                ...state,
+                budget: Math.min(state.budget + 10, 20000),
+            };
+        
+        case 'Decrement_Budget':
+            action.type = "DONE";
+            state.budget = Math.min(state.budget - 10, 10);
+
+            return {
+                ...state,
+                budget:Math.max(state.budget - 10, 10),
+            };
+
+        case 'BUDGET_CHANGE':
+            action.type = "DONE";
+            state.budget = action.payload;
+            
+            return{
+                ...state,
+            }
+        
         default:
             return state;
     }
