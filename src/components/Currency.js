@@ -10,10 +10,10 @@ const Location = () => {
     }
     
   return (
-    <div className='alert alert-secondary'> Location 
-        <select class="form-select-sm" name="Location" id="Location" onChange={event=>changeLocation(event.target.value)}>
-          <option value="£">Uk(£)</option>
-          <option value="₹">India(₹)</option>
+    <div className='alert alert-success'> Currency 
+        <select class="form-select-sm alert alert-success" name="Location" id="Location" onChange={event=>changeLocation(event.target.value)}>
+          <option  value="£">Uk(£)</option>
+          <option  value="₹">India(₹)</option>
           <option value="€">Europe(€)</option>
           <option value="CAD">Canada(CAD)</option>
         </select>	

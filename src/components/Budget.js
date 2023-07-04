@@ -2,7 +2,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 const Budget = (props) => {
-    const { budget, dispatch, expenses } = useContext(AppContext);
+    const { budget, dispatch, expenses, currency } = useContext(AppContext);
     const totalExpenses = expenses.reduce((total, item) => {
         return (total += item.cost);
     }, 0);
@@ -18,7 +18,7 @@ const Budget = (props) => {
         }
         else if(e.target.value < totalExpenses)
         {
-            alert('Cannot be less than ' + totalExpenses );
+            alert('Cannot be less than the spending which is' + totalExpenses );
         }
         else
         {
@@ -35,7 +35,7 @@ const Budget = (props) => {
 
     return (
         <div className='alert alert-secondary'>
-            <span>Budget: £{budget}</span>
+            <span>Budget: {currency}</span>
             <input
                         required='required'
                         type='number'
@@ -44,7 +44,7 @@ const Budget = (props) => {
                         step="10"
                         
                         min="10"
-                        style={{ marginLeft: '2rem' , size: 10}}
+                        style={{  size: 10}}
                         onChange={handleChange}
                     >
                         </input>
